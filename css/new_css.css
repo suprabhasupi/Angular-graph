@@ -1,0 +1,31 @@
+@font-face {
+        font-family:tregular;
+        src: url(font/Titillium-Regular.otf);
+}
+.tregular{
+    font-family:tregular;
+}
+@font-face {
+        font-family:tlight;
+        src: url(font/TTitillium-Light.otf);
+}
+.tlight{
+    font-family:tlight;
+}
+@font-face {
+        font-family:tbold;
+        src: url(font/Titillium-Bold.otf);
+}
+.tbold{
+    font-family:tbold;
+}
+
+
+@font-face {
+        font-family:tsmibold;
+        src: url(font/Titillium-Semibold.otf);
+}
+.tsmibold{
+    font-family:tsmibold;
+}
+
