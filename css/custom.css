@@ -196,3 +196,14 @@ p.totl_chrt{
   font-size: 1.3em;
   color: #e4183b;
 }
+
+span.ng-binding {
+    opacity: 1;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus{
+  background: #f52b70;
+}
+[uib-typeahead-popup].dropdown-menu{
+  width: 100%;
+}

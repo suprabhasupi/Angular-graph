@@ -27,19 +27,14 @@
                                 <md-input-container class="md-block" flex-gt-sm>
                                     <label class="search">Search</label>
                                     <md-button class="md-raised" ng-click="gc.search()"><i class="fa fa-search" aria-hidden="true"></i></md-button>
-                                    <!-- <input ng-model="gc.searchKeyword"> -->
-                                     <!-- <input auto-complete items="gc.names" ng-model="selected"> -->
-                                <!-- <input type="text" class="form-control autocomplete" ng-model="gc.selected" typeahead="state for state in gc.states | filter:$viewValue"> -->
+                                  
+                            
 
-                              <!--   <input name="gc.states" id="states" type="text" placeholder="enter a state" ng-model="gc.selected" typeahead="i for i in states($viewValue)" class="form-control" > -->
-                              <input type="text" class="form-control autocomplete" ng-model="gc.selected" typeahead="state for state in gc.states | filter:$viewValue">
+                             <input type="text" class="form-control autocomplete" ng-model="gc.searchKeyword" uib-typeahead=" i.Company for i in gc.data | filter:$viewValue"  typeahead-editable="false"
+                             typeahead-on-select="gc.search()"> 
 
-                              <!--  <div class="form-group">
-    <label><i class="fa fa-globe"></i> State</label>
-    <input type="text" class="form-control" ng-model="selectedState" bs-options="state for state in states" placeholder="Enter state" bs-typeahead>
-  </div> -->
                                 </md-input-container>
-                                {{gc.states}}
+                            
                                 <div class="details pull-left" ng-show= "gc.details">
 
                                     <p><span class="elmnt tbold">ID:</span><span class="element_value">{{gc.result._id}}</span></p>
@@ -59,11 +54,12 @@
                     </md-tab>
                     <!-- </div> -->
                     <md-tab label="BAR CHART" ng-click="gc.barGraph()">
-                        <md-content class="md-padding">c
+                        <md-content class="md-padding">
                             <ul class="chart" style="width:{{gc.width}}px; height:{{gc.height}}px;">
                                 <div class="y" style="width:{{gc.height}}px;">{{gc.yAxis}}</div>
                                 <div class="x">{{gc.xAxis}}</div>
-                                <li ng-repeat="bar in gc.avgProfit" class="bar" style="height:{{bar.avg / gc.max * 20}}px; width:{{gc.width / gc.avgProfit.length - 5}}px; left:{{$index / gc.avgProfit.length * gc.width}}px;"><span>{{bar.sec}}:{{bar.avg}}</span></li>
+                                <li ng-repeat="bar in gc.avgProfit" class="bar" style="height:{{bar.avg / gc.max * 20}}px; width:{{gc.width / gc.avgProfit.length - 5}}px; left:{{$index / gc.avgProfit.length * gc.width}}px;"></li>
+                                <!-- <span>{{bar.sec}}:{{bar.avg}}</span> -->
                                 <li ng-repeat="bar in gc.avgProfit" class="bar" style="position: absolute;
     top: 23.3em;height:{{-(bar.avg / gc.max *20)}}px; width:{{gc.width / gc.avgProfit.length - 5}}px; left:{{$index / gc.avgProfit.length * gc.width}}px;"><span>{{bar.sec}}:{{bar.avg}}</span></li>
                             </ul>
