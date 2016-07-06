@@ -27,9 +27,19 @@
                                 <md-input-container class="md-block" flex-gt-sm>
                                     <label class="search">Search</label>
                                     <md-button class="md-raised" ng-click="gc.search()"><i class="fa fa-search" aria-hidden="true"></i></md-button>
-                                    <input ng-model="gc.searchKeyword">
-                                </md-input-container>
+                                    <!-- <input ng-model="gc.searchKeyword"> -->
+                                     <!-- <input auto-complete items="gc.names" ng-model="selected"> -->
+                                <!-- <input type="text" class="form-control autocomplete" ng-model="gc.selected" typeahead="state for state in gc.states | filter:$viewValue"> -->
 
+                              <!--   <input name="gc.states" id="states" type="text" placeholder="enter a state" ng-model="gc.selected" typeahead="i for i in states($viewValue)" class="form-control" > -->
+                              <input type="text" class="form-control autocomplete" ng-model="gc.selected" typeahead="state for state in gc.states | filter:$viewValue">
+
+                              <!--  <div class="form-group">
+    <label><i class="fa fa-globe"></i> State</label>
+    <input type="text" class="form-control" ng-model="selectedState" bs-options="state for state in states" placeholder="Enter state" bs-typeahead>
+  </div> -->
+                                </md-input-container>
+                                {{gc.states}}
                                 <div class="details pull-left" ng-show= "gc.details">
 
                                     <p><span class="elmnt tbold">ID:</span><span class="element_value">{{gc.result._id}}</span></p>
@@ -49,7 +59,7 @@
                     </md-tab>
                     <!-- </div> -->
                     <md-tab label="BAR CHART" ng-click="gc.barGraph()">
-                        <md-content class="md-padding">
+                        <md-content class="md-padding">c
                             <ul class="chart" style="width:{{gc.width}}px; height:{{gc.height}}px;">
                                 <div class="y" style="width:{{gc.height}}px;">{{gc.yAxis}}</div>
                                 <div class="x">{{gc.xAxis}}</div>
@@ -61,6 +71,7 @@
                     </md-tab>
                     <md-tab label="PIE CHART" ng-click="gc.pieChart()">
                         <md-content class="md-padding">
+                       
                             <div id="pieChart" class="pchart"></div>
                             <p class="tbold totl_chrt">Total Market Cap of Industries</p>
                         </md-content>
@@ -75,6 +86,9 @@
 <script src="js/angular-animate.min.js"></script>
 <script src="js/angular-aria.min.js"></script>
 <script src="js/angular-messages.min.js"></script>
+<script type="text/javascript" src="js/ui-bootstrap.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.jquery.js"></script>
 <!-- Angular Material Library -->
 <script src="js/angular-material.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
